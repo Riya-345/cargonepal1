@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /rider
+Disallow: /orders
+Disallow: /checkout
+
+Sitemap: https://cargonepal.com/sitemap.xml

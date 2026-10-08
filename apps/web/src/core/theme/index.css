@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CargoNepal — Global styles & design tokens (spec §37)
+   Professional red/blue/white logistics identity.
+   ============================================================ */
+
+:root {
+  --brand: #1f42eb;
+  --brand-dark: #1831d8;
+  --accent: #f83232;
+  --ink: #21252f;
+  --surface: #ffffff;
+  --muted: #637491;
+  --radius: 14px;
+}
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-50 text-ink-900 font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-200 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-300;
+  }
+}
+
+@layer components {
+  .cn-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .cn-card {
+    @apply bg-white rounded-2xl shadow-card border border-ink-100;
+  }
+  .cn-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl font-semibold
+           transition-all duration-150 focus:outline-none focus-visible:ring-2
+           focus-visible:ring-brand-400 focus-visible:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed select-none;
+  }
+  .cn-btn-primary {
+    @apply cn-btn bg-brand-600 text-white hover:bg-brand-700 active:scale-[0.98] shadow-sm;
+  }
+  .cn-btn-accent {
+    @apply cn-btn bg-accent-600 text-white hover:bg-accent-700 active:scale-[0.98] shadow-sm;
+  }
+  .cn-btn-outline {
+    @apply cn-btn border border-ink-200 bg-white text-ink-800 hover:bg-ink-50 active:scale-[0.98];
+  }
+  .cn-btn-ghost {
+    @apply cn-btn text-ink-700 hover:bg-ink-100;
+  }
+  .cn-input {
+    @apply w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-ink-900
+           placeholder:text-ink-400 focus:border-brand-400 focus:outline-none
+           focus:ring-2 focus:ring-brand-100 transition;
+  }
+  .cn-label {
+    @apply block text-sm font-medium text-ink-700 mb-1.5;
+  }
+  .cn-badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+  .cn-skeleton {
+    @apply relative overflow-hidden bg-ink-100 rounded-lg;
+  }
+  .cn-skeleton::after {
+    content: "";
+    @apply absolute inset-0 -translate-x-full animate-shimmer
+           bg-gradient-to-r from-transparent via-white/60 to-transparent;
+  }
+}
+
+/* Map container fills its parent */
+.cn-map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Rider pulse marker */
+.rider-pulse::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: currentColor;
+  opacity: 0.4;
+  animation: pulseRing 1.6s ease-out infinite;
+}

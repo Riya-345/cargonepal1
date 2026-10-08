@@ -1,0 +1,70 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{ts,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          50: '#eef4ff',
+          100: '#d9e5ff',
+          200: '#bcd1ff',
+          300: '#8eb2ff',
+          400: '#5988fc',
+          500: '#3361f6',
+          600: '#1f42eb',
+          700: '#1831d8',
+          800: '#192baf',
+          900: '#1a2a8a',
+          950: '#151b54',
+        },
+        accent: {
+          50: '#fff1f1',
+          100: '#ffdfdf',
+          200: '#ffc5c5',
+          300: '#ff9d9d',
+          400: '#ff6464',
+          500: '#f83232',
+          600: '#e51515',
+          700: '#c10e0e',
+          800: '#a01010',
+          900: '#841414',
+          950: '#480202',
+        },
+        ink: {
+          50: '#f6f7f9',
+          100: '#eceef2',
+          200: '#d4d9e2',
+          300: '#aeb8c9',
+          400: '#8292ab',
+          500: '#637491',
+          600: '#4e5c78',
+          700: '#404b62',
+          800: '#384153',
+          900: '#323947',
+          950: '#21252f',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+      },
+      boxShadow: {
+        card: '0 1px 2px rgba(16,24,40,0.06), 0 1px 3px rgba(16,24,40,0.10)',
+        pop: '0 12px 32px rgba(16,24,40,0.14)',
+      },
+      keyframes: {
+        'fade-in': { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+        'slide-up': { '0%': { transform: 'translateY(12px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+        shimmer: { '100%': { transform: 'translateX(100%)' } },
+        pulseRing: { '0%': { transform: 'scale(0.8)', opacity: '0.7' }, '100%': { transform: 'scale(2)', opacity: '0' } },
+      },
+      animation: {
+        'fade-in': 'fade-in 0.2s ease-out',
+        'slide-up': 'slide-up 0.25s ease-out',
+        shimmer: 'shimmer 1.5s infinite',
+        pulseRing: 'pulseRing 1.6s ease-out infinite',
+      },
+    },
+  },
+  plugins: [],
+};
